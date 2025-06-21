@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 15px;
+        background-color: #bcbcbc;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 300px;
+        height: 400px;
+        background-image: linear-gradient(to right,rgb(158, 235, 138),rgb(139, 112, 193));
+        /* margin:20px; */
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        row-gap: 30px;
+      }
+      #amount{
+        width: 100%;
+        border:none;
+        outline: none;
+        border: 1px solid #bcbcbc;
+        border-radius: 1rem;
+        padding: 5px 10px;
+
+      }
+      .section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+      }
+      form {
+        width: 100%;
+      }
+      form button {
+        background-color: purple;
+        color:white;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 1.002rem;
+        border:none;
+        outline: none;
+        border: 1px solid #bcbcbc;
+        border-radius: 1rem;
+        padding: 5px 10px;
+        transition: all;
+        transition-duration: 1s;
+        transition-timing-function: ease-out;
+
+      }
+      button:hover{
+        background-color: rgb(240, 158, 117);
+        border-color:blue;
+
+      }
+      #exchange-info{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: rgb(72, 72, 214);
+      }
+      form img {
+        width: 30px;
+      }
+      .dropDown {
+        /* border: 1px solid #7a7878; */
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+      }
+      .dropDown select {
+        padding: 2px;
+        border: none;
+        outline: none;
+      }
+      .Enter{
+        font-size: 1.2rem;
+      }
+      .fa-solid{
+        font-size: 1.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Currency Converter</h2>
+      <form>
+        <p class="Enter">Enter the amount</p>
+        <input type="number" id="amount" />
+        <div class="section">
+          <div class="from">
+            <p>From</p>
+            <div class="dropDown">
+                <img
+                  src="https://flagsapi.com/US/flat/64.png"
+                  alt=""
+                  id="img2"
+                />
+              <select class="listItem1">
+             <option value="USD">USD</option>
+              </select>
+            </div>
+          </div>
+          <div class="converterImg">
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          </div>
+          <div class="to">
+            <p>To</p>
+            <div class="dropDown">
+                <img
+                  src="https://flagsapi.com/PK/flat/64.png"
+                  alt=""
+                  id="img2"
+                />
+              <select class="listItem2">
+                <option value="PKR">PKR</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button id="rate" type="button" onclick="fetchData()">Get Exhange Rate</button>
+        <p id="exchange-info">1USD=256.65 PKR</p>
+
+        
+      </form>
+    </div>
+   <script src="codes.js"></script>
+    <script src="script.js"></script>
+ 
+  </body>
+</html>
